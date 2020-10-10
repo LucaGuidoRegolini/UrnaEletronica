@@ -1,0 +1,40 @@
+.menu-container {
+    width: 100vw;
+    height: 100vh;
+    background: #ECE9E9;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.menu-container .menu{
+    width: 879px;
+    height: 650px;
+    background:#fff;
+    justify-content: center;
+    align-items: center
+}
+
+.menu-container .menu div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+    justify-content: center;
+    align-items: center
+}
+
+.menu-container .menu div .button{
+    width: 70%;
+    height: 80px;
+    background: #ECE9E9;
+    border: 0;
+    border-radius: 10px;
+    color: #696666;
+    font-weight: 700;
+    margin: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 30px;
+    line-height: 60px;
+    transition: filter 0.3s;
+}
