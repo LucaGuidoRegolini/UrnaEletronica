@@ -60,13 +60,14 @@ module.exports = {
         try{
             const election = await Election.find();
             const candidate = await Candidate.find({_id: req.params.id});
+            
+            VotesCandidate = candidate[0].votes
+            VotesTotal = election[0].votesTotal
+            await Candidate.findOneAndRemove({_id: req.params.id});
             if(candidate[0].file !== 'null.png'){
                 promisify(fs.unlink)(path.resolve(__dirname, 
                 '..','..','tmp', 'uploads', candidate[0].file))
             }
-            VotesCandidate = candidate[0].votes
-            VotesTotal = election[0].votesTotal
-            await Candidate.findOneAndRemove(req.params.id);
             
             let DeletVote = await Election.updateMany(
                 {},{$set : {
@@ -75,7 +76,7 @@ module.exports = {
 
             return res.send("Parabens");
         }catch{
-            return res.send("Não foi dessa vez")
+           return res.status(400)
         } 
     }
 }

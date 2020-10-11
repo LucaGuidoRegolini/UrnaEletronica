@@ -113,6 +113,10 @@ p {
     margin-top: 25px;
 }
 
+.Link{
+    cursor: pointer; 
+}
+
 .candidate{
     cursor: pointer;
 }

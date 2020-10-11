@@ -1,13 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { useHistory } from 'react-router-dom'
-import {FiTrash2, FiPlus } from 'react-icons/fi'
+import {FiPlus } from 'react-icons/fi'
 
 import api from '../../Services/api'
 
 import './styles.css'
 
 import Logoimg from '../../assets/logoimg.png'
-import Null from '../../assets/null.png'
 
 export default function Profile() {
     var pause
@@ -24,9 +23,8 @@ export default function Profile() {
 
     async function handleDeleteIncident(id){
         try{
-            var x;
             const r = window.confirm("O candidato sera excluido");
-            if(r==true){
+            if(r===true){
                 await api.delete('candidate/cancel/'+id);
                 setCandidates(candidates.filter(candidates => candidates._id !== id ))
             }else{
@@ -45,7 +43,7 @@ export default function Profile() {
     return (
         <div className="candidate-container">
             <header>
-                <img onClick={() => handleMenu()} src={Logoimg} alt="Eleições 2020" width="110" height="100" />
+                <img className="Link" onClick={() => handleMenu()} src={Logoimg} alt="Eleições 2020" width="110" height="100" />
             </header>
             <div>
                 <div>

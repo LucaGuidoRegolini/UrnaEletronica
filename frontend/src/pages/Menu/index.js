@@ -18,7 +18,7 @@ export default function Menu() {
     async function handleVote(e) {
         e.preventDefault();
         try{
-            history.push('/votes');
+            history.push('/election');
         }catch (err){
             alert('Tente novamente')
         }
@@ -27,7 +27,7 @@ export default function Menu() {
     async function handleDates(e) {
         e.preventDefault();
         try{
-            history.push('/profile');
+            history.push('/votes');
         }catch (err){
             alert('Tente novamente')
         }
