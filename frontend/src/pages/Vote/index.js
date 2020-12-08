@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import { useHistory } from 'react-router-dom'
-import {FiPlus } from 'react-icons/fi'
 
 import api from '../../Services/api'
 

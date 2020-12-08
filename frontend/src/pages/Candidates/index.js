@@ -40,6 +40,10 @@ export default function Profile() {
         history.push('/');
     }
 
+    async function handleCreate() {
+        history.push('/create');
+    }
+
     return (
         <div className="candidate-container">
             <header>
@@ -77,7 +81,7 @@ export default function Profile() {
                     </li>
                     ))}
                     <li className="candidate">
-                        <div className="Plus">
+                        <div className="Plus" onClick={() => handleCreate()}>
                         <FiPlus size={200} color="#C4C4C4"/>
                         </div>     
                     </li>  
